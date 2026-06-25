@@ -1,0 +1,689 @@
+[0m08:10:55.569882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1065af3e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1078c16a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1078c1340>]}
+
+
+============================== 08:10:55.572312 | 467c19c6-061e-4647-a19f-b40dae81f98f ==============================
+[0m08:10:55.572312 [info ] [MainThread]: Running with dbt=1.11.11
+[0m08:10:55.572589 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt debug', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'target_path': 'None', 'log_format': 'default', 'log_path': '/Users/shriyankatiki/Documents/datasys/airspace/airspace_models/logs', 'write_json': 'True', 'empty': 'None', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'quiet': 'False', 'profiles_dir': '/Users/shriyankatiki/.dbt', 'use_colors': 'True', 'no_print': 'None', 'static_parser': 'True', 'indirect_selection': 'eager', 'printer_width': '80', 'version_check': 'True', 'introspect': 'True', 'partial_parse': 'True'}
+[0m08:10:55.582403 [info ] [MainThread]: dbt version: 1.11.11
+[0m08:10:55.582621 [info ] [MainThread]: python version: 3.12.7
+[0m08:10:55.582745 [info ] [MainThread]: python path: /Users/shriyankatiki/Documents/datasys/airspace/venv/bin/python
+[0m08:10:55.582859 [info ] [MainThread]: os info: macOS-26.3-arm64-arm-64bit
+[0m08:10:56.318046 [info ] [MainThread]: Using profiles dir at /Users/shriyankatiki/.dbt
+[0m08:10:56.318332 [info ] [MainThread]: Using profiles.yml file at /Users/shriyankatiki/.dbt/profiles.yml
+[0m08:10:56.318463 [info ] [MainThread]: Using dbt_project.yml file at /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/dbt_project.yml
+[0m08:10:56.318587 [info ] [MainThread]: adapter type: bigquery
+[0m08:10:56.318710 [info ] [MainThread]: adapter version: 1.11.3
+[0m08:10:56.360330 [info ] [MainThread]: Configuration:
+[0m08:10:56.360607 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m08:10:56.360751 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m08:10:56.360875 [info ] [MainThread]: Required dependencies:
+[0m08:10:56.361092 [debug] [MainThread]: Executing "git --help"
+[0m08:10:56.415323 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m08:10:56.415939 [debug] [MainThread]: STDERR: "b''"
+[0m08:10:56.416167 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m08:10:56.417012 [info ] [MainThread]: Connection:
+[0m08:10:56.418646 [info ] [MainThread]:   method: service-account
+[0m08:10:56.419041 [info ] [MainThread]:   database: airspace-platform
+[0m08:10:56.419382 [info ] [MainThread]:   execution_project: airspace-platform
+[0m08:10:56.419890 [info ] [MainThread]:   schema: airspace_raw
+[0m08:10:56.420394 [info ] [MainThread]:   location: US
+[0m08:10:56.420932 [info ] [MainThread]:   priority: interactive
+[0m08:10:56.421736 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m08:10:56.422203 [info ] [MainThread]:   impersonate_service_account: None
+[0m08:10:56.422594 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m08:10:56.423053 [info ] [MainThread]:   job_retries: 1
+[0m08:10:56.423509 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m08:10:56.424318 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m08:10:56.424827 [info ] [MainThread]:   timeout_seconds: 300
+[0m08:10:56.425063 [info ] [MainThread]:   client_id: None
+[0m08:10:56.425231 [info ] [MainThread]:   token_uri: None
+[0m08:10:56.425689 [info ] [MainThread]:   compute_region: None
+[0m08:10:56.425903 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m08:10:56.426138 [info ] [MainThread]:   gcs_bucket: None
+[0m08:10:56.426266 [info ] [MainThread]:   dataproc_batch: None
+[0m08:10:56.426803 [info ] [MainThread]: Registered adapter: bigquery=1.11.3
+[0m08:10:56.532962 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m08:10:56.533533 [debug] [MainThread]: On debug: select 1 as id
+[0m08:10:56.533781 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:10:58.482044 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airspace-platform&j=bq:US:7331f195-f8a6-48ca-b186-e9c75c0b222d&page=queryresults
+[0m08:10:58.879227 [debug] [MainThread]: SQL status: OK in 0.393 seconds
+[0m08:10:59.313291 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m08:10:59.315008 [info ] [MainThread]: [32mAll checks passed![0m
+[0m08:10:59.321967 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 3.789739, "process_in_blocks": "0", "process_kernel_time": 0.430764, "process_mem_max_rss": "209698816", "process_out_blocks": "0", "process_user_time": 1.170817}
+[0m08:10:59.323861 [debug] [MainThread]: Command `dbt debug` succeeded at 08:10:59.323381 after 3.79 seconds
+[0m08:10:59.324662 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m08:10:59.325628 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13abd1070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13b8fb6e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13ab6ac30>]}
+[0m08:10:59.326181 [debug] [MainThread]: Flushing usage events
+[0m08:11:00.346513 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m08:16:11.149668 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c0159d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11ee1d670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11ee1d310>]}
+
+
+============================== 08:16:11.152174 | 42810eb7-49f3-4e8c-819c-626c697c5ca2 ==============================
+[0m08:16:11.152174 [info ] [MainThread]: Running with dbt=1.11.11
+[0m08:16:11.152466 [debug] [MainThread]: running dbt with arguments {'log_path': '/Users/shriyankatiki/Documents/datasys/airspace/airspace_models/logs', 'use_experimental_parser': 'False', 'warn_error': 'None', 'log_cache_events': 'False', 'static_parser': 'True', 'write_json': 'True', 'invocation_command': 'dbt run', 'quiet': 'False', 'version_check': 'True', 'empty': 'False', 'profiles_dir': '/Users/shriyankatiki/.dbt', 'indirect_selection': 'eager', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'partial_parse': 'True', 'use_colors': 'True', 'introspect': 'True', 'printer_width': '80', 'no_print': 'None', 'fail_fast': 'False', 'target_path': 'None', 'cache_selected_only': 'False'}
+[0m08:16:12.015850 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '42810eb7-49f3-4e8c-819c-626c697c5ca2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x119a19790>]}
+[0m08:16:12.040204 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '42810eb7-49f3-4e8c-819c-626c697c5ca2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x119aecf20>]}
+[0m08:16:12.040582 [info ] [MainThread]: Registered adapter: bigquery=1.11.3
+[0m08:16:12.137486 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m08:16:12.137939 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m08:16:12.138125 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '42810eb7-49f3-4e8c-819c-626c697c5ca2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13e1e9a00>]}
+[0m08:16:12.702556 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '42810eb7-49f3-4e8c-819c-626c697c5ca2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x141a452b0>]}
+[0m08:16:12.749262 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/manifest.json
+[0m08:16:12.750639 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/semantic_manifest.json
+[0m08:16:12.758900 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '42810eb7-49f3-4e8c-819c-626c697c5ca2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x141aad9a0>]}
+[0m08:16:12.759267 [info ] [MainThread]: Found 1 model, 1 source, 553 macros
+[0m08:16:12.759453 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '42810eb7-49f3-4e8c-819c-626c697c5ca2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1419beb40>]}
+[0m08:16:12.760309 [info ] [MainThread]: 
+[0m08:16:12.760473 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m08:16:12.760618 [info ] [MainThread]: 
+[0m08:16:12.760830 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m08:16:12.761207 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_airspace-platform'
+[0m08:16:12.761379 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:16:13.488291 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_airspace-platform, now list_airspace-platform_airspace_raw)
+[0m08:16:13.488783 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m08:16:14.116664 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '42810eb7-49f3-4e8c-819c-626c697c5ca2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x141a526f0>]}
+[0m08:16:14.117775 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:16:14.195936 [debug] [Thread-3 (]: Began running node model.airspace_models.tail_delay_lineage
+[0m08:16:14.196275 [info ] [Thread-3 (]: 1 of 1 START sql view model airspace_raw.tail_delay_lineage .................... [RUN]
+[0m08:16:14.196504 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_airspace-platform_airspace_raw, now model.airspace_models.tail_delay_lineage)
+[0m08:16:14.196663 [debug] [Thread-3 (]: Began compiling node model.airspace_models.tail_delay_lineage
+[0m08:16:14.200866 [debug] [Thread-3 (]: Writing injected SQL for node "model.airspace_models.tail_delay_lineage"
+[0m08:16:14.201395 [debug] [Thread-3 (]: Began executing node model.airspace_models.tail_delay_lineage
+[0m08:16:14.213973 [debug] [Thread-3 (]: Writing runtime sql for node "model.airspace_models.tail_delay_lineage"
+[0m08:16:14.214650 [debug] [Thread-3 (]: On model.airspace_models.tail_delay_lineage: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "airspace_models", "target_name": "dev", "node_id": "model.airspace_models.tail_delay_lineage"} */
+
+
+  create or replace view `airspace-platform`.`airspace_raw`.`tail_delay_lineage`
+  OPTIONS()
+  as with base as (
+    select
+        fl_date,
+        op_unique_carrier,
+        tail_num,
+        origin,
+        dest,
+        dep_delay,
+        arr_delay,
+        carrier_delay,
+        weather_delay,
+        nas_delay,
+        cancelled,
+        cancellationcode
+    from `airspace-platform`.`airspace_raw`.`flights_raw`
+    where tail_num is not null
+),
+
+with_lineage as (
+    select
+        *,
+
+        -- The previous flight's arrival delay for this same aircraft
+        lag(arr_delay) over (
+            partition by tail_num
+            order by fl_date
+        ) as prev_flight_arr_delay,
+
+        -- Which airport this aircraft just came from
+        lag(origin) over (
+            partition by tail_num
+            order by fl_date
+        ) as prev_flight_origin,
+
+        -- How much of today's departure delay was inherited
+        case
+            when dep_delay > 0 and lag(arr_delay) over (
+                partition by tail_num
+                order by fl_date
+            ) > 0
+            then least(dep_delay, lag(arr_delay) over (
+                partition by tail_num
+                order by fl_date
+            ))
+            else 0
+        end as inherited_delay_minutes,
+
+        -- Root cause classification
+        case
+            when cancelled = '1' and cancellationcode = 'A' then 'carrier_cancellation'
+            when cancelled = '1' and cancellationcode = 'B' then 'weather_cancellation'
+            when cancelled = '1' and cancellationcode = 'C' then 'nas_cancellation'
+            when carrier_delay > 0 and (weather_delay is null or weather_delay = 0)
+                then 'carrier_controlled'
+            when weather_delay > 0 and (carrier_delay is null or carrier_delay = 0)
+                then 'weather_controlled'
+            when nas_delay > 0 and (carrier_delay is null or carrier_delay = 0)
+                then 'faa_controlled'
+            when carrier_delay > 0 and weather_delay > 0
+                then 'mixed_carrier_weather'
+            else 'unknown'
+        end as delay_root_cause
+
+    from base
+)
+
+select * from with_lineage;
+
+
+[0m08:16:14.214912 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m08:16:15.436327 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airspace-platform&j=bq:US:d5cfe6a3-8c0d-4ab5-9d52-dd91b3fb7ea9&page=queryresults
+[0m08:16:15.944938 [error] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airspace-platform&j=bq:US:d5cfe6a3-8c0d-4ab5-9d52-dd91b3fb7ea9&page=queryresults
+[0m08:16:15.967495 [debug] [Thread-3 (]: Database Error in model tail_delay_lineage (models/tail_delay_lineage.sql)
+  Unrecognized name: origin at [11:9]
+  compiled code at target/run/airspace_models/models/tail_delay_lineage.sql
+[0m08:16:15.969525 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '42810eb7-49f3-4e8c-819c-626c697c5ca2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x141a463f0>]}
+[0m08:16:15.970121 [error] [Thread-3 (]: 1 of 1 ERROR creating sql view model airspace_raw.tail_delay_lineage ........... [[31mERROR[0m in 1.77s]
+[0m08:16:15.970782 [debug] [Thread-3 (]: Finished running node model.airspace_models.tail_delay_lineage
+[0m08:16:15.971356 [debug] [Thread-6 (]: Marking all children of 'model.airspace_models.tail_delay_lineage' to be skipped because of status 'error'.  Reason: Database Error in model tail_delay_lineage (models/tail_delay_lineage.sql)
+  Unrecognized name: origin at [11:9]
+  compiled code at target/run/airspace_models/models/tail_delay_lineage.sql.
+[0m08:16:15.972750 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m08:16:16.038060 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:16:16.038351 [debug] [MainThread]: Connection 'model.airspace_models.tail_delay_lineage' was properly closed.
+[0m08:16:16.038500 [info ] [MainThread]: 
+[0m08:16:16.038648 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 3.28 seconds (3.28s).
+[0m08:16:16.038953 [debug] [MainThread]: Command end result
+[0m08:16:16.054486 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/manifest.json
+[0m08:16:16.055426 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/semantic_manifest.json
+[0m08:16:16.057889 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/run_results.json
+[0m08:16:16.058042 [info ] [MainThread]: 
+[0m08:16:16.058248 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m08:16:16.058412 [info ] [MainThread]: 
+[0m08:16:16.058578 [error] [MainThread]: [31mFailure in model tail_delay_lineage (models/tail_delay_lineage.sql)[0m
+[0m08:16:16.058728 [error] [MainThread]:   Database Error in model tail_delay_lineage (models/tail_delay_lineage.sql)
+  Unrecognized name: origin at [11:9]
+  compiled code at target/run/airspace_models/models/tail_delay_lineage.sql
+[0m08:16:16.058848 [info ] [MainThread]: 
+[0m08:16:16.058988 [info ] [MainThread]:   compiled code at target/compiled/airspace_models/models/tail_delay_lineage.sql
+[0m08:16:16.059098 [info ] [MainThread]: 
+[0m08:16:16.059437 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m08:16:16.062442 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 4.9513984, "process_in_blocks": "0", "process_kernel_time": 0.379318, "process_mem_max_rss": "239140864", "process_out_blocks": "0", "process_user_time": 2.192539}
+[0m08:16:16.062641 [debug] [MainThread]: Command `dbt run` failed at 08:16:16.062608 after 4.95 seconds
+[0m08:16:16.062800 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10554ae10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11e266b40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c0159d0>]}
+[0m08:16:16.062950 [debug] [MainThread]: Flushing usage events
+[0m08:16:16.490643 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m08:19:36.174837 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10717dcd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118b314f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118b31190>]}
+
+
+============================== 08:19:36.177271 | 91985fdb-0fda-4a18-ba2a-d75423ccdb23 ==============================
+[0m08:19:36.177271 [info ] [MainThread]: Running with dbt=1.11.11
+[0m08:19:36.177577 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'warn_error': 'None', 'target_path': 'None', 'fail_fast': 'False', 'introspect': 'True', 'log_format': 'default', 'version_check': 'True', 'printer_width': '80', 'profiles_dir': '/Users/shriyankatiki/.dbt', 'invocation_command': 'dbt run', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'static_parser': 'True', 'write_json': 'True', 'empty': 'False', 'no_print': 'None', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'log_path': '/Users/shriyankatiki/Documents/datasys/airspace/airspace_models/logs', 'partial_parse': 'True', 'use_colors': 'True', 'cache_selected_only': 'False'}
+[0m08:19:37.011471 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '91985fdb-0fda-4a18-ba2a-d75423ccdb23', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1382d1070>]}
+[0m08:19:37.034192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '91985fdb-0fda-4a18-ba2a-d75423ccdb23', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1183939e0>]}
+[0m08:19:37.034488 [info ] [MainThread]: Registered adapter: bigquery=1.11.3
+[0m08:19:37.140391 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m08:19:37.240965 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m08:19:37.241264 [debug] [MainThread]: Partial parsing: updated file: airspace_models://models/tail_delay_lineage.sql
+[0m08:19:37.345857 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '91985fdb-0fda-4a18-ba2a-d75423ccdb23', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x139469070>]}
+[0m08:19:37.382570 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/manifest.json
+[0m08:19:37.383882 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/semantic_manifest.json
+[0m08:19:37.389658 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '91985fdb-0fda-4a18-ba2a-d75423ccdb23', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1395e7dd0>]}
+[0m08:19:37.389876 [info ] [MainThread]: Found 1 model, 1 source, 553 macros
+[0m08:19:37.390029 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '91985fdb-0fda-4a18-ba2a-d75423ccdb23', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1395d40e0>]}
+[0m08:19:37.390799 [info ] [MainThread]: 
+[0m08:19:37.390957 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m08:19:37.391071 [info ] [MainThread]: 
+[0m08:19:37.391269 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m08:19:37.391609 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_airspace-platform'
+[0m08:19:37.391780 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:19:38.307016 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_airspace-platform, now list_airspace-platform_airspace_raw)
+[0m08:19:38.312279 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m08:19:38.900890 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '91985fdb-0fda-4a18-ba2a-d75423ccdb23', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053df170>]}
+[0m08:19:38.901791 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:19:38.976645 [debug] [Thread-3 (]: Began running node model.airspace_models.tail_delay_lineage
+[0m08:19:38.977017 [info ] [Thread-3 (]: 1 of 1 START sql view model airspace_raw.tail_delay_lineage .................... [RUN]
+[0m08:19:38.977270 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_airspace-platform_airspace_raw, now model.airspace_models.tail_delay_lineage)
+[0m08:19:38.984045 [debug] [Thread-3 (]: Began compiling node model.airspace_models.tail_delay_lineage
+[0m08:19:38.991435 [debug] [Thread-3 (]: Writing injected SQL for node "model.airspace_models.tail_delay_lineage"
+[0m08:19:38.992078 [debug] [Thread-3 (]: Began executing node model.airspace_models.tail_delay_lineage
+[0m08:19:39.007291 [debug] [Thread-3 (]: Writing runtime sql for node "model.airspace_models.tail_delay_lineage"
+[0m08:19:39.008008 [debug] [Thread-3 (]: On model.airspace_models.tail_delay_lineage: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "airspace_models", "target_name": "dev", "node_id": "model.airspace_models.tail_delay_lineage"} */
+
+
+  create or replace view `airspace-platform`.`airspace_raw`.`tail_delay_lineage`
+  OPTIONS()
+  as with base as (
+    select
+        fl_date,
+        op_unique_carrier,
+        tail_num,
+        origin_airport_id,
+        dest_airport_id,
+        dest,
+        dep_delay,
+        arr_delay,
+        carrier_delay,
+        weather_delay,
+        nas_delay,
+        cancelled,
+        cancellation_code
+    from `airspace-platform`.`airspace_raw`.`flights_raw`
+    where tail_num is not null
+),
+
+with_lineage as (
+    select
+        *,
+
+        -- The previous flight's arrival delay for this same aircraft
+        lag(arr_delay) over (
+            partition by tail_num
+            order by fl_date
+        ) as prev_flight_arr_delay,
+
+        -- Which airport this aircraft just came from
+        lag(origin_airport_id) over (
+            partition by tail_num
+            order by fl_date
+        ) as prev_flight_origin_airport_id,
+
+        -- How much of today's departure delay was inherited
+        case
+            when dep_delay > 0 and lag(arr_delay) over (
+                partition by tail_num
+                order by fl_date
+            ) > 0
+            then least(dep_delay, lag(arr_delay) over (
+                partition by tail_num
+                order by fl_date
+            ))
+            else 0
+        end as inherited_delay_minutes,
+
+        -- Root cause classification
+        case
+            when cancelled = '1' and cancellation_code = 'A' then 'carrier_cancellation'
+            when cancelled = '1' and cancellation_code = 'B' then 'weather_cancellation'
+            when cancelled = '1' and cancellation_code = 'C' then 'nas_cancellation'
+            when carrier_delay > 0 and (weather_delay is null or weather_delay = 0)
+                then 'carrier_controlled'
+            when weather_delay > 0 and (carrier_delay is null or carrier_delay = 0)
+                then 'weather_controlled'
+            when nas_delay > 0 and (carrier_delay is null or carrier_delay = 0)
+                then 'faa_controlled'
+            when carrier_delay > 0 and weather_delay > 0
+                then 'mixed_carrier_weather'
+            else 'unknown'
+        end as delay_root_cause
+
+    from base
+)
+
+select * from with_lineage;
+
+
+[0m08:19:39.008425 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m08:19:40.131456 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airspace-platform&j=bq:US:7c39c159-121e-43b3-89ac-ac045f1e4a0d&page=queryresults
+[0m08:19:40.383150 [error] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airspace-platform&j=bq:US:7c39c159-121e-43b3-89ac-ac045f1e4a0d&page=queryresults
+[0m08:19:40.395812 [debug] [Thread-3 (]: Database Error in model tail_delay_lineage (models/tail_delay_lineage.sql)
+  No matching signature for operator = for argument types: FLOAT64, STRING
+    Signature: T1 = T1
+      Unable to find common supertype for templated argument <T1>
+        Input types for <T1>: {DOUBLE, STRING} at [56:18]
+  compiled code at target/run/airspace_models/models/tail_delay_lineage.sql
+[0m08:19:40.400815 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '91985fdb-0fda-4a18-ba2a-d75423ccdb23', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077363c0>]}
+[0m08:19:40.401628 [error] [Thread-3 (]: 1 of 1 ERROR creating sql view model airspace_raw.tail_delay_lineage ........... [[31mERROR[0m in 1.42s]
+[0m08:19:40.401932 [debug] [Thread-3 (]: Finished running node model.airspace_models.tail_delay_lineage
+[0m08:19:40.402415 [debug] [Thread-6 (]: Marking all children of 'model.airspace_models.tail_delay_lineage' to be skipped because of status 'error'.  Reason: Database Error in model tail_delay_lineage (models/tail_delay_lineage.sql)
+  No matching signature for operator = for argument types: FLOAT64, STRING
+    Signature: T1 = T1
+      Unable to find common supertype for templated argument <T1>
+        Input types for <T1>: {DOUBLE, STRING} at [56:18]
+  compiled code at target/run/airspace_models/models/tail_delay_lineage.sql.
+[0m08:19:40.404459 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m08:19:40.462370 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:19:40.462613 [debug] [MainThread]: Connection 'model.airspace_models.tail_delay_lineage' was properly closed.
+[0m08:19:40.462791 [info ] [MainThread]: 
+[0m08:19:40.462960 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 3.07 seconds (3.07s).
+[0m08:19:40.463345 [debug] [MainThread]: Command end result
+[0m08:19:40.484164 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/manifest.json
+[0m08:19:40.489981 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/semantic_manifest.json
+[0m08:19:40.493890 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/run_results.json
+[0m08:19:40.494076 [info ] [MainThread]: 
+[0m08:19:40.494257 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m08:19:40.494388 [info ] [MainThread]: 
+[0m08:19:40.494557 [error] [MainThread]: [31mFailure in model tail_delay_lineage (models/tail_delay_lineage.sql)[0m
+[0m08:19:40.494709 [error] [MainThread]:   Database Error in model tail_delay_lineage (models/tail_delay_lineage.sql)
+  No matching signature for operator = for argument types: FLOAT64, STRING
+    Signature: T1 = T1
+      Unable to find common supertype for templated argument <T1>
+        Input types for <T1>: {DOUBLE, STRING} at [56:18]
+  compiled code at target/run/airspace_models/models/tail_delay_lineage.sql
+[0m08:19:40.494830 [info ] [MainThread]: 
+[0m08:19:40.494964 [info ] [MainThread]:   compiled code at target/compiled/airspace_models/models/tail_delay_lineage.sql
+[0m08:19:40.495074 [info ] [MainThread]: 
+[0m08:19:40.495219 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m08:19:40.498541 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 4.360471, "process_in_blocks": "0", "process_kernel_time": 0.407576, "process_mem_max_rss": "226361344", "process_out_blocks": "0", "process_user_time": 1.816058}
+[0m08:19:40.498797 [debug] [MainThread]: Command `dbt run` failed at 08:19:40.498761 after 4.36 seconds
+[0m08:19:40.499046 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107750050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118b315b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118b316d0>]}
+[0m08:19:40.499197 [debug] [MainThread]: Flushing usage events
+[0m08:19:41.058696 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m08:20:25.352139 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1124b9ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11461d5b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11461d280>]}
+
+
+============================== 08:20:25.354626 | 5efd32d2-1953-40cc-8215-4c88f4d1dd92 ==============================
+[0m08:20:25.354626 [info ] [MainThread]: Running with dbt=1.11.11
+[0m08:20:25.354970 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'debug': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'partial_parse': 'True', 'version_check': 'True', 'empty': 'False', 'printer_width': '80', 'fail_fast': 'False', 'log_cache_events': 'False', 'use_colors': 'True', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_path': '/Users/shriyankatiki/Documents/datasys/airspace/airspace_models/logs', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/shriyankatiki/.dbt', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'write_json': 'True', 'indirect_selection': 'eager'}
+[0m08:20:26.151800 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5efd32d2-1953-40cc-8215-4c88f4d1dd92', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1144f0260>]}
+[0m08:20:26.174430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5efd32d2-1953-40cc-8215-4c88f4d1dd92', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1320ec3b0>]}
+[0m08:20:26.174721 [info ] [MainThread]: Registered adapter: bigquery=1.11.3
+[0m08:20:26.320695 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m08:20:26.421021 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m08:20:26.421322 [debug] [MainThread]: Partial parsing: updated file: airspace_models://models/tail_delay_lineage.sql
+[0m08:20:26.529684 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5efd32d2-1953-40cc-8215-4c88f4d1dd92', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x133f69070>]}
+[0m08:20:26.564336 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/manifest.json
+[0m08:20:26.565513 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/semantic_manifest.json
+[0m08:20:26.571555 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5efd32d2-1953-40cc-8215-4c88f4d1dd92', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1348e7ce0>]}
+[0m08:20:26.571764 [info ] [MainThread]: Found 1 model, 1 source, 553 macros
+[0m08:20:26.571916 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5efd32d2-1953-40cc-8215-4c88f4d1dd92', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1348d4260>]}
+[0m08:20:26.572688 [info ] [MainThread]: 
+[0m08:20:26.572848 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m08:20:26.572962 [info ] [MainThread]: 
+[0m08:20:26.573158 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m08:20:26.573509 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_airspace-platform'
+[0m08:20:26.573685 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:20:27.247846 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_airspace-platform, now list_airspace-platform_airspace_raw)
+[0m08:20:27.248446 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m08:20:27.963461 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5efd32d2-1953-40cc-8215-4c88f4d1dd92', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13487e5d0>]}
+[0m08:20:27.965153 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:20:28.042386 [debug] [Thread-3 (]: Began running node model.airspace_models.tail_delay_lineage
+[0m08:20:28.042789 [info ] [Thread-3 (]: 1 of 1 START sql view model airspace_raw.tail_delay_lineage .................... [RUN]
+[0m08:20:28.043139 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_airspace-platform_airspace_raw, now model.airspace_models.tail_delay_lineage)
+[0m08:20:28.044209 [debug] [Thread-3 (]: Began compiling node model.airspace_models.tail_delay_lineage
+[0m08:20:28.049541 [debug] [Thread-3 (]: Writing injected SQL for node "model.airspace_models.tail_delay_lineage"
+[0m08:20:28.050224 [debug] [Thread-3 (]: Began executing node model.airspace_models.tail_delay_lineage
+[0m08:20:28.065051 [debug] [Thread-3 (]: Writing runtime sql for node "model.airspace_models.tail_delay_lineage"
+[0m08:20:28.065815 [debug] [Thread-3 (]: On model.airspace_models.tail_delay_lineage: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "airspace_models", "target_name": "dev", "node_id": "model.airspace_models.tail_delay_lineage"} */
+
+
+  create or replace view `airspace-platform`.`airspace_raw`.`tail_delay_lineage`
+  OPTIONS()
+  as with base as (
+    select
+        fl_date,
+        op_unique_carrier,
+        tail_num,
+        origin_airport_id,
+        dest_airport_id,
+        dest,
+        dep_delay,
+        arr_delay,
+        carrier_delay,
+        weather_delay,
+        nas_delay,
+        cancelled,
+        cancellation_code
+    from `airspace-platform`.`airspace_raw`.`flights_raw`
+    where tail_num is not null
+),
+
+with_lineage as (
+    select
+        *,
+
+        -- The previous flight's arrival delay for this same aircraft
+        lag(arr_delay) over (
+            partition by tail_num
+            order by fl_date
+        ) as prev_flight_arr_delay,
+
+        -- Which airport this aircraft just came from
+        lag(origin_airport_id) over (
+            partition by tail_num
+            order by fl_date
+        ) as prev_flight_origin_airport_id,
+
+        -- How much of today's departure delay was inherited
+        case
+            when dep_delay > 0 and lag(arr_delay) over (
+                partition by tail_num
+                order by fl_date
+            ) > 0
+            then least(dep_delay, lag(arr_delay) over (
+                partition by tail_num
+                order by fl_date
+            ))
+            else 0
+        end as inherited_delay_minutes,
+
+        -- Root cause classification
+        case
+            when cast(cancelled as int64) = 1 and cancellation_code = 'A' then 'carrier_cancellation'
+            when cast(cancelled as int64) = 1 and cancellation_code = 'B' then 'weather_cancellation'
+            when cast(cancelled as int64) = 1 and cancellation_code = 'C' then 'nas_cancellation'
+            when carrier_delay > 0 and (weather_delay is null or weather_delay = 0)
+                then 'carrier_controlled'
+            when weather_delay > 0 and (carrier_delay is null or carrier_delay = 0)
+                then 'weather_controlled'
+            when nas_delay > 0 and (carrier_delay is null or carrier_delay = 0)
+                then 'faa_controlled'
+            when carrier_delay > 0 and weather_delay > 0
+                then 'mixed_carrier_weather'
+            else 'unknown'
+        end as delay_root_cause
+
+    from base
+)
+
+select * from with_lineage;
+
+
+[0m08:20:28.066108 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m08:20:29.182562 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airspace-platform&j=bq:US:5da3c5c9-8294-4949-aa4e-559328c3d84e&page=queryresults
+[0m08:20:29.738866 [debug] [Thread-3 (]: SQL status: OK in 0.555 seconds
+[0m08:20:29.818580 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5efd32d2-1953-40cc-8215-4c88f4d1dd92', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1333ef2c0>]}
+[0m08:20:29.818989 [info ] [Thread-3 (]: 1 of 1 OK created sql view model airspace_raw.tail_delay_lineage ............... [[32mCREATE VIEW (0 processed)[0m in 1.77s]
+[0m08:20:29.819272 [debug] [Thread-3 (]: Finished running node model.airspace_models.tail_delay_lineage
+[0m08:20:29.819929 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m08:20:29.884244 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:20:29.884520 [debug] [MainThread]: Connection 'model.airspace_models.tail_delay_lineage' was properly closed.
+[0m08:20:29.884699 [info ] [MainThread]: 
+[0m08:20:29.884875 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 3.31 seconds (3.31s).
+[0m08:20:29.885284 [debug] [MainThread]: Command end result
+[0m08:20:29.899609 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/manifest.json
+[0m08:20:29.901133 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/semantic_manifest.json
+[0m08:20:29.905581 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/shriyankatiki/Documents/datasys/airspace/airspace_models/target/run_results.json
+[0m08:20:29.905765 [info ] [MainThread]: 
+[0m08:20:29.905980 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m08:20:29.906104 [info ] [MainThread]: 
+[0m08:20:29.906259 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m08:20:29.910791 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.593745, "process_in_blocks": "0", "process_kernel_time": 0.402921, "process_mem_max_rss": "226443264", "process_out_blocks": "0", "process_user_time": 1.855877}
+[0m08:20:29.911082 [debug] [MainThread]: Command `dbt run` succeeded at 08:20:29.911041 after 4.59 seconds
+[0m08:20:29.911324 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11461d5b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11461d280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x135b1b050>]}
+[0m08:20:29.911502 [debug] [MainThread]: Flushing usage events
+[0m08:20:30.348366 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m08:27:34.093679 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a32c60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081c56d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081c5430>]}
+
+
+============================== 08:27:34.096722 | e4741918-a6d3-497a-8bd2-84aac703cee0 ==============================
+[0m08:27:34.096722 [info ] [MainThread]: Running with dbt=1.11.11
+[0m08:27:34.097145 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'no_print': 'None', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/shriyankatiki/.dbt', 'version_check': 'True', 'quiet': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'log_cache_events': 'False', 'log_path': 'airspace_models/logs', 'partial_parse': 'True', 'introspect': 'True', 'debug': 'False', 'printer_width': '80', 'target_path': 'None', 'invocation_command': 'dbt debug --project-dir airspace_models', 'write_json': 'True', 'warn_error': 'None', 'indirect_selection': 'eager', 'log_format': 'default', 'empty': 'None', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m08:27:34.108778 [info ] [MainThread]: dbt version: 1.11.11
+[0m08:27:34.109007 [info ] [MainThread]: python version: 3.12.7
+[0m08:27:34.109136 [info ] [MainThread]: python path: /Users/shriyankatiki/Documents/datasys/airspace/venv/bin/python
+[0m08:27:34.109253 [info ] [MainThread]: os info: macOS-26.3-arm64-arm-64bit
+[0m08:27:34.724487 [info ] [MainThread]: Using profiles dir at /Users/shriyankatiki/.dbt
+[0m08:27:34.724761 [info ] [MainThread]: Using profiles.yml file at /Users/shriyankatiki/.dbt/profiles.yml
+[0m08:27:34.724888 [info ] [MainThread]: Using dbt_project.yml file at airspace_models/dbt_project.yml
+[0m08:27:34.725061 [info ] [MainThread]: adapter type: bigquery
+[0m08:27:34.725219 [info ] [MainThread]: adapter version: 1.11.3
+[0m08:27:34.768462 [info ] [MainThread]: Configuration:
+[0m08:27:34.768734 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m08:27:34.768870 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m08:27:34.768990 [info ] [MainThread]: Required dependencies:
+[0m08:27:34.769182 [debug] [MainThread]: Executing "git --help"
+[0m08:27:34.820720 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m08:27:34.821220 [debug] [MainThread]: STDERR: "b''"
+[0m08:27:34.821384 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m08:27:34.821528 [info ] [MainThread]: Connection:
+[0m08:27:34.821703 [info ] [MainThread]:   method: service-account
+[0m08:27:34.821812 [info ] [MainThread]:   database: airspace-platform
+[0m08:27:34.821920 [info ] [MainThread]:   execution_project: airspace-platform
+[0m08:27:34.822020 [info ] [MainThread]:   schema: airspace_raw
+[0m08:27:34.822121 [info ] [MainThread]:   location: US
+[0m08:27:34.822218 [info ] [MainThread]:   priority: interactive
+[0m08:27:34.822322 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m08:27:34.822549 [info ] [MainThread]:   impersonate_service_account: None
+[0m08:27:34.822716 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m08:27:34.822831 [info ] [MainThread]:   job_retries: 1
+[0m08:27:34.822944 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m08:27:34.823054 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m08:27:34.823159 [info ] [MainThread]:   timeout_seconds: 300
+[0m08:27:34.823261 [info ] [MainThread]:   client_id: None
+[0m08:27:34.823364 [info ] [MainThread]:   token_uri: None
+[0m08:27:34.823462 [info ] [MainThread]:   compute_region: None
+[0m08:27:34.823560 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m08:27:34.823661 [info ] [MainThread]:   gcs_bucket: None
+[0m08:27:34.823761 [info ] [MainThread]:   dataproc_batch: None
+[0m08:27:34.824077 [info ] [MainThread]: Registered adapter: bigquery=1.11.3
+[0m08:27:34.931941 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m08:27:34.932277 [debug] [MainThread]: On debug: select 1 as id
+[0m08:27:34.932480 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:27:36.708450 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airspace-platform&j=bq:US:63718af5-1432-4b0b-bc33-0602015582da&page=queryresults
+[0m08:27:37.003845 [debug] [MainThread]: SQL status: OK in 0.294 seconds
+[0m08:27:37.333850 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m08:27:37.334545 [info ] [MainThread]: [32mAll checks passed![0m
+[0m08:27:37.348719 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 3.2935896, "process_in_blocks": "0", "process_kernel_time": 0.345393, "process_mem_max_rss": "211353600", "process_out_blocks": "0", "process_user_time": 1.245319}
+[0m08:27:37.351118 [debug] [MainThread]: Command `dbt debug` succeeded at 08:27:37.350388 after 3.30 seconds
+[0m08:27:37.352568 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m08:27:37.353590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f3145c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107e28bc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f708770>]}
+[0m08:27:37.354697 [debug] [MainThread]: Flushing usage events
+[0m08:27:37.829981 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m08:27:44.227811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11a515cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11bd1d280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11bd1cfb0>]}
+
+
+============================== 08:27:44.231797 | 9fc37604-a32b-4e7c-afac-000f8b2da90a ==============================
+[0m08:27:44.231797 [info ] [MainThread]: Running with dbt=1.11.11
+[0m08:27:44.232092 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'partial_parse': 'True', 'quiet': 'False', 'target_path': 'None', 'profiles_dir': '/Users/shriyankatiki/.dbt', 'printer_width': '80', 'log_format': 'default', 'empty': 'False', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run --project-dir airspace_models --select tail_delay_lineage', 'static_parser': 'True', 'indirect_selection': 'eager', 'debug': 'False', 'cache_selected_only': 'False', 'write_json': 'True', 'log_path': 'airspace_models/logs', 'use_colors': 'True', 'version_check': 'True', 'introspect': 'True', 'warn_error': 'None', 'no_print': 'None'}
+[0m08:27:45.165805 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9fc37604-a32b-4e7c-afac-000f8b2da90a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12fa71070>]}
+[0m08:27:45.191817 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9fc37604-a32b-4e7c-afac-000f8b2da90a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13ae535f0>]}
+[0m08:27:45.192268 [info ] [MainThread]: Registered adapter: bigquery=1.11.3
+[0m08:27:45.290791 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m08:27:45.400293 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m08:27:45.400555 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m08:27:45.400701 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m08:27:45.414430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9fc37604-a32b-4e7c-afac-000f8b2da90a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13b5e3890>]}
+[0m08:27:45.453599 [debug] [MainThread]: Wrote artifact WritableManifest to airspace_models/target/manifest.json
+[0m08:27:45.455053 [debug] [MainThread]: Wrote artifact SemanticManifest to airspace_models/target/semantic_manifest.json
+[0m08:27:45.461629 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9fc37604-a32b-4e7c-afac-000f8b2da90a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13ba95400>]}
+[0m08:27:45.461888 [info ] [MainThread]: Found 1 model, 1 source, 553 macros
+[0m08:27:45.462041 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9fc37604-a32b-4e7c-afac-000f8b2da90a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11bcf2c30>]}
+[0m08:27:45.462756 [info ] [MainThread]: 
+[0m08:27:45.463016 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m08:27:45.463166 [info ] [MainThread]: 
+[0m08:27:45.463396 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m08:27:45.463800 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_airspace-platform'
+[0m08:27:45.463978 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:27:46.124426 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_airspace-platform, now list_airspace-platform_airspace_raw)
+[0m08:27:46.124731 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m08:27:46.766873 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9fc37604-a32b-4e7c-afac-000f8b2da90a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13ba95010>]}
+[0m08:27:46.768161 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:27:46.846713 [debug] [Thread-3 (]: Began running node model.airspace_models.tail_delay_lineage
+[0m08:27:46.847236 [info ] [Thread-3 (]: 1 of 1 START sql view model airspace_raw.tail_delay_lineage .................... [RUN]
+[0m08:27:46.847527 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_airspace-platform_airspace_raw, now model.airspace_models.tail_delay_lineage)
+[0m08:27:46.847736 [debug] [Thread-3 (]: Began compiling node model.airspace_models.tail_delay_lineage
+[0m08:27:46.856177 [debug] [Thread-3 (]: Writing injected SQL for node "model.airspace_models.tail_delay_lineage"
+[0m08:27:46.857144 [debug] [Thread-3 (]: Began executing node model.airspace_models.tail_delay_lineage
+[0m08:27:46.872121 [debug] [Thread-3 (]: Writing runtime sql for node "model.airspace_models.tail_delay_lineage"
+[0m08:27:46.872897 [debug] [Thread-3 (]: On model.airspace_models.tail_delay_lineage: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "airspace_models", "target_name": "dev", "node_id": "model.airspace_models.tail_delay_lineage"} */
+
+
+  create or replace view `airspace-platform`.`airspace_raw`.`tail_delay_lineage`
+  OPTIONS()
+  as with base as (
+    select
+        fl_date,
+        op_unique_carrier,
+        tail_num,
+        origin_airport_id,
+        dest_airport_id,
+        dest,
+        dep_delay,
+        arr_delay,
+        carrier_delay,
+        weather_delay,
+        nas_delay,
+        cancelled,
+        cancellation_code
+    from `airspace-platform`.`airspace_raw`.`flights_raw`
+    where tail_num is not null
+),
+
+with_lineage as (
+    select
+        *,
+
+        -- The previous flight's arrival delay for this same aircraft
+        lag(arr_delay) over (
+            partition by tail_num
+            order by fl_date
+        ) as prev_flight_arr_delay,
+
+        -- Which airport this aircraft just came from
+        lag(origin_airport_id) over (
+            partition by tail_num
+            order by fl_date
+        ) as prev_flight_origin_airport_id,
+
+        -- How much of today's departure delay was inherited
+        case
+            when dep_delay > 0 and lag(arr_delay) over (
+                partition by tail_num
+                order by fl_date
+            ) > 0
+            then least(dep_delay, lag(arr_delay) over (
+                partition by tail_num
+                order by fl_date
+            ))
+            else 0
+        end as inherited_delay_minutes,
+
+        -- Root cause classification
+        case
+            when cast(cancelled as int64) = 1 and cancellation_code = 'A' then 'carrier_cancellation'
+            when cast(cancelled as int64) = 1 and cancellation_code = 'B' then 'weather_cancellation'
+            when cast(cancelled as int64) = 1 and cancellation_code = 'C' then 'nas_cancellation'
+            when carrier_delay > 0 and (weather_delay is null or weather_delay = 0)
+                then 'carrier_controlled'
+            when weather_delay > 0 and (carrier_delay is null or carrier_delay = 0)
+                then 'weather_controlled'
+            when nas_delay > 0 and (carrier_delay is null or carrier_delay = 0)
+                then 'faa_controlled'
+            when carrier_delay > 0 and weather_delay > 0
+                then 'mixed_carrier_weather'
+            else 'unknown'
+        end as delay_root_cause
+
+    from base
+)
+
+select * from with_lineage;
+
+
+[0m08:27:46.873181 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m08:27:47.791716 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=airspace-platform&j=bq:US:9af308dc-aec2-4aac-b260-bb1a5182c662&page=queryresults
+[0m08:27:48.347073 [debug] [Thread-3 (]: SQL status: OK in 0.554 seconds
+[0m08:27:48.404987 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9fc37604-a32b-4e7c-afac-000f8b2da90a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11ab32270>]}
+[0m08:27:48.405564 [info ] [Thread-3 (]: 1 of 1 OK created sql view model airspace_raw.tail_delay_lineage ............... [[32mCREATE VIEW (0 processed)[0m in 1.56s]
+[0m08:27:48.406196 [debug] [Thread-3 (]: Finished running node model.airspace_models.tail_delay_lineage
+[0m08:27:48.408543 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m08:27:48.466152 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:27:48.466450 [debug] [MainThread]: Connection 'model.airspace_models.tail_delay_lineage' was properly closed.
+[0m08:27:48.466649 [info ] [MainThread]: 
+[0m08:27:48.466863 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 3.00 seconds (3.00s).
+[0m08:27:48.467499 [debug] [MainThread]: Command end result
+[0m08:27:48.485234 [debug] [MainThread]: Wrote artifact WritableManifest to airspace_models/target/manifest.json
+[0m08:27:48.488285 [debug] [MainThread]: Wrote artifact SemanticManifest to airspace_models/target/semantic_manifest.json
+[0m08:27:48.492243 [debug] [MainThread]: Wrote artifact RunExecutionResult to airspace_models/target/run_results.json
+[0m08:27:48.492466 [info ] [MainThread]: 
+[0m08:27:48.493180 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m08:27:48.493441 [info ] [MainThread]: 
+[0m08:27:48.493657 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m08:27:48.497598 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.3271656, "process_in_blocks": "0", "process_kernel_time": 0.367588, "process_mem_max_rss": "220758016", "process_out_blocks": "0", "process_user_time": 1.820935}
+[0m08:27:48.498276 [debug] [MainThread]: Command `dbt run` succeeded at 08:27:48.498200 after 4.33 seconds
+[0m08:27:48.498673 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11bd1d220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104bd2c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11ab54c80>]}
+[0m08:27:48.498857 [debug] [MainThread]: Flushing usage events
+[0m08:27:48.841702 [debug] [MainThread]: An error was encountered while trying to flush usage events
