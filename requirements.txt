@@ -4,3 +4,9 @@ plotly
 google-cloud-bigquery
 db-dtypes
 pyarrow
+langgraph
+langchain-groq
+langchain-core
+pydantic
+requests
+google-auth
