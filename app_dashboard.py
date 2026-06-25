@@ -17,8 +17,10 @@ def get_bigquery_client():
         os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "credentials.json"
         return bigquery.Client(project=PROJECT_ID)
     else:
-        creds_info = dict(st.secrets)
-        creds_info["private_key"] = creds_info["private_key"].replace("\\n", "\n")
+        import base64
+        from google.oauth2 import service_account
+        creds_bytes = base64.b64decode(st.secrets["CREDENTIALS_B64"])
+        creds_info = json.loads(creds_bytes)
         credentials = service_account.Credentials.from_service_account_info(
             creds_info,
             scopes=["https://www.googleapis.com/auth/cloud-platform"]
