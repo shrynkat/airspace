@@ -10,6 +10,8 @@ import tempfile
 # Credentials — works both locally and on Streamlit Cloud
 PROJECT_ID = "airspace-platform"
 
+from google.oauth2 import service_account
+
 def get_bigquery_client():
     if os.path.exists("credentials.json"):
         os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "credentials.json"
@@ -17,11 +19,11 @@ def get_bigquery_client():
     else:
         creds_info = dict(st.secrets)
         creds_info["private_key"] = creds_info["private_key"].replace("\\n", "\n")
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
-            json.dump(creds_info, f)
-            tmp_path = f.name
-        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = tmp_path
-        return bigquery.Client(project=PROJECT_ID)
+        credentials = service_account.Credentials.from_service_account_info(
+            creds_info,
+            scopes=["https://www.googleapis.com/auth/cloud-platform"]
+        )
+        return bigquery.Client(project=PROJECT_ID, credentials=credentials)
 
 client = get_bigquery_client()
 
