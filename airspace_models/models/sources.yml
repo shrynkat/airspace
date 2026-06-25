@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: airspace_raw
+    database: airspace-platform
+    schema: airspace_raw
+    tables:
+      - name: flights_raw
