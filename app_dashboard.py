@@ -4,13 +4,26 @@ import plotly.express as px
 import plotly.graph_objects as go
 from google.cloud import bigquery
 import os
+import json
+import tempfile
 
-# Credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "credentials.json"
-
-# Config
+# Credentials — works both locally and on Streamlit Cloud
 PROJECT_ID = "airspace-platform"
-client = bigquery.Client(project=PROJECT_ID)
+
+def get_bigquery_client():
+    if os.path.exists("credentials.json"):
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "credentials.json"
+        return bigquery.Client(project=PROJECT_ID)
+    else:
+        creds_info = dict(st.secrets)
+        creds_info["private_key"] = creds_info["private_key"].replace("\\n", "\n")
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
+            json.dump(creds_info, f)
+            tmp_path = f.name
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = tmp_path
+        return bigquery.Client(project=PROJECT_ID)
+
+client = get_bigquery_client()
 
 # Page setup
 st.set_page_config(
